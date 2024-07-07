@@ -1,7 +1,6 @@
 import requests
 
 url = 'https://translate-agent-61d887725b78.herokuapp.com/translate'
-# url = 'http://127.0.0.1:5000/translate'
 data = {
     "source_lang": "English",
     "target_lang": "Chinese",
@@ -9,5 +8,8 @@ data = {
     "country": "China"
 }
 
-response = requests.post(url, json=data)
-print(response.json())
+try:
+    response = requests.post(url, json=data, timeout=60)  # 设置超时时间为60秒
+    print(response.json())
+except requests.exceptions.RequestException as e:
+    print(f"Error: {e}")
