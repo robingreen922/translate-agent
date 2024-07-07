@@ -12,12 +12,6 @@ from openai import OpenAI#导入OpenAI模块,用于调用openai的接口
 load_dotenv()#读取环境变量
 API_KEY = os.getenv("OPENAI_API_KEY")#获取openai的API_KEY
 API_URL = os.getenv("OPENAI_API_URL")#获取openai的API_URL
-# print("API Key:", API_KEY)
-# print("API Url:", API_URL)
-# API_KEY = "sk-VGGLgjzNo2P7l5b6137f8eEe9d7146169642EdD5652115Ce"
-# API_URL = "https://aihubmix.com/v1"
-# print("API Key:", API_KEY)
-# print("API Url:", API_URL)
 #调用OpenAI接口
 client = OpenAI(
     api_key = API_KEY,#设置openai的API_KEY
